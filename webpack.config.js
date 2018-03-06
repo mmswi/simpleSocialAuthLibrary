@@ -9,7 +9,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 module.exports = {
-  entry: './client/index.js',
+  entry: ['babel-polyfill','./client/index.js'],
   devtool: "source-map",
   output: {
     path: path.resolve('dist'),

@@ -2,14 +2,14 @@
 // each property will be "ProviderName": {signIn: signInHandler, signOut: signOutHandler}
 const socialProviders = {}
 
-export default class SocialAuth {
-    signIn(providerName) {
+const socialAuth = {
+    signIn: (providerName) => {
         return socialProviders[providerName].signIn()
-    }
-    signOut(providerName) {
+    },
+    signOut: (providerName) => {
         return socialProviders[providerName].signOut()
-    }
-    registerProvider(providerName, handlerObject) {
+    },
+    registerProvider: (providerName, handlerObject) => {
         // registerProvider - needs to be called when initiating the provider 
         for(let provider in socialProviders) {
             if (provider === providerName) {
@@ -19,3 +19,5 @@ export default class SocialAuth {
         socialProviders[providerName] = handlerObject
     }
 }
+
+export { socialAuth };

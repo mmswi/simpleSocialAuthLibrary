@@ -1,13 +1,17 @@
 /* 
     ./client/index.js
 */
-import InitGoogle from '../socialAuth/googleAuth';
-import SocialAuth from '../socialAuth/socialAuth';
+import { initGoogle } from '../socialAuth/googleAuth';
+import { socialAuth } from '../socialAuth/socialAuth';
 
-InitGoogle();
-const socialAuth = new SocialAuth();
+initGoogle();
+console.log(socialAuth);
 
-// TODO - 
-socialAuth.signIn("Google").then(function(userProfile) {
+// Async signin / signout
+const asyncSignIn = async () => {
+    const userProfile = await socialAuth.signIn("Google");
     console.log("we got here, fam!!!", userProfile);
-});
+}
+
+
+setTimeout(asyncSignIn, 1000)
