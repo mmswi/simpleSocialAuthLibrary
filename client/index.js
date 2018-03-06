@@ -9,5 +9,5 @@ const socialAuth = new SocialAuth();
 
 // TODO - 
 socialAuth.signIn("Google").then(function(userProfile) {
-    console.log(userProfile)
+    console.log("we got here, fam!!!", userProfile);
 });
