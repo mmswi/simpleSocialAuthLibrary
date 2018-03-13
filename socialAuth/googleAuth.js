@@ -5,9 +5,6 @@ import { socialAuth } from "./socialAuth";
 const initGoogle = () => {
     console.log("defining onloadgoogleinit")
     window.onLoadGoogleInit = function onLoadGoogleInit() {
-        const date = new Date()
-        const n = date.getTime();
-        console.log("onloadinit is called at", n)
         gapi.load('auth2', function () {
             const GoogleProvider = {
                 signIn: async function() {
